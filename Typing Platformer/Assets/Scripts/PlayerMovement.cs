@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private float moveSpeed = 0.1f;
 
     [SerializeField]
-    private float jumpHeight = 1.5f;
+    private float jumpHeight = .5f;
 
     // Animation fields
     private Animator anim;
