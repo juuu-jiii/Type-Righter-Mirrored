@@ -10,7 +10,7 @@ public class SwitchScenes : MonoBehaviour
     #region Fields
 
     [SerializeField]
-    private Scene scene;
+    private string target;
 
     #endregion Fields
 
@@ -26,11 +26,21 @@ public class SwitchScenes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if (){
 
+        //}
     }
 
-    void OnClick(){
-        SceneManager.LoadScene (sceneName:"TitleScene");
+    public void NextScene(){
+        SceneManager.LoadScene(target);
+    }
+
+    public void SwitchToMainMenu(){
+        SceneManager.LoadScene("TitleScene");
+    }
+
+    public void QuitGame(){
+        Application.Quit();
     }
 
 }
