@@ -42,6 +42,17 @@ public class MakeBlock : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Gets the block spawned by this letter.
+    /// </summary>
+    public GameObject ThisBlock
+    {
+        get
+        {
+            return thisBlock;
+        }
+    }
+
     #endregion Properties
 
     // Start is called before the first frame update
