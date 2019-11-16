@@ -10,6 +10,8 @@ public class Collisions : MonoBehaviour
     [SerializeField]
     private GameObject levelCompleteCanvas;
 
+    private bool wonLevel;
+
     #endregion Fields
 
     #region Properties
@@ -20,6 +22,7 @@ public class Collisions : MonoBehaviour
     void Start()
     {
         levelCompleteCanvas.SetActive(false);
+        wonLevel = false;
     }
 
     // Update is called once per frame
@@ -51,8 +54,10 @@ public class Collisions : MonoBehaviour
                 break;
             case PrefabType.Spike:
                 {
-                    PlayerPrefs.SetString("previousScene", SceneManager.GetActiveScene().name);
-                    SceneManager.LoadScene("GameOver");
+                    if(!wonLevel) {
+                        PlayerPrefs.SetString("previousScene", SceneManager.GetActiveScene().name);
+                        SceneManager.LoadScene("GameOver");
+                    }
                 }
                 break;
             case PrefabType.Goal:
@@ -68,6 +73,7 @@ public class Collisions : MonoBehaviour
         PrefabInfo collidedType = collided.GetComponent<PrefabInfo>();
         PlayerMovement movement = this.gameObject.GetComponent<PlayerMovement>();
         if(collidedType.Type == PrefabType.Goal){
+            wonLevel = true;
             levelCompleteCanvas.SetActive(true);
         }
     }
