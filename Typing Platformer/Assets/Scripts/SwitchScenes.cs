@@ -26,7 +26,9 @@ public class SwitchScenes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if (){
 
+        //}
     }
 
     public void NextScene(){
