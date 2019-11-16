@@ -27,6 +27,9 @@ public class MakeBlock : MonoBehaviour
 
     #region Properties
 
+    /// <summary>
+    /// Gets or sets what letter this letter object should be.
+    /// </summary>
     public KeyCode Letter
     {
         get
