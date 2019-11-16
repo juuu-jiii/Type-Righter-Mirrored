@@ -29,8 +29,8 @@ public class SwitchScenes : MonoBehaviour
 
     }
 
-    void OnClick(){
-        SceneManager.LoadScene (sceneName:"TitleScene");
+    public void NextScene(){
+        SceneManager.LoadScene("UITestScene");
     }
 
 }
