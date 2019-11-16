@@ -15,18 +15,26 @@ public class PlayerMovement : MonoBehaviour
     private float velY;
     [SerializeField]
     private float velX;
+    [SerializeField]
+    private float jumpBurst;
+    [SerializeField]
+    private bool resting;
     #endregion Fields
     // Start is called before the first frame update
     void Start()
     {
         grav = -1f;
         velX = 1f;
+        jumpBurst = 7f;
+        //temporary
+        resting = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         Movin();
+        
     }
 
     void Movin()
@@ -39,5 +47,20 @@ public class PlayerMovement : MonoBehaviour
         {
             pos.x += velX * Time.deltaTime;
         }
+        if((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && resting )
+        {
+            velY = jumpBurst;
+            resting = false;
+        }
+
+        Gravity();
     }
+
+
+
+    void Gravity()
+    {
+        
+    }
+
 }
