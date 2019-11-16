@@ -57,9 +57,19 @@ public class Collisions : MonoBehaviour
                 break;
             case PrefabType.Goal:
                 {
-                    levelCompleteCanvas.SetActive(true);
+                    //levelCompleteCanvas.SetActive(true);
                 }
                 break;
         }
     }
+
+    public void OnTriggerEnter2D(Collider2D collider){
+        GameObject collided = collider.gameObject;
+        PrefabInfo collidedType = collided.GetComponent<PrefabInfo>();
+        PlayerMovement movement = this.gameObject.GetComponent<PlayerMovement>();
+        if(collidedType.Type == PrefabType.Goal){
+            levelCompleteCanvas.SetActive(true);
+        }
+    }
+
 }
