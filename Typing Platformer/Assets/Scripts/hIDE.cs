@@ -20,7 +20,7 @@ public class hIDE : MonoBehaviour
             count--;
         else
         {
-            sr.sortingOrder = -4;
+            sr.sprite = null;
         }
             
 
