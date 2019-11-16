@@ -78,7 +78,8 @@ public class PlayerMovement : MonoBehaviour
     {
         // Update speed variable to switch between run and idle
         anim.SetFloat("Speed", Mathf.Abs(velocity.x));
-
+        anim.SetFloat("Vertical Speed", velocity.y);
+        anim.SetBool("IsJumping", isJumping);
         position = this.gameObject.transform.position;
 
         // Listen out for left or right inputs
