@@ -82,13 +82,13 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             velocity.x = -1 * moveSpeed;
-            Debug.Log("Left");
+           // Debug.Log("Left");
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
             velocity.x = moveSpeed;
-            Debug.Log("Right");
+           // Debug.Log("Right");
         }
 
         // If neither inputs are pressed, decay horizontal movement
@@ -106,11 +106,11 @@ public class PlayerMovement : MonoBehaviour
         // Listen for jump input from up arrow or space bar.
         if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))
         {
-            Debug.Log("Jump");
+           // Debug.Log("Jump");
             if (isJumping == false)
             {
                 isJumping = true;
-                velocity.y += 1;
+                velocity.y += 2;
             }
         }
 
