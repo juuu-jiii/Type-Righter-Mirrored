@@ -6,96 +6,121 @@ public class PlayerMovement : MonoBehaviour
 {
     #region Fields
 
-    private Vector2 pos;
+    private Vector3 position;
+    private Vector3 velocity;
 
-    private float grav;
-    //[SerializeField]
-    //private float accY;
+    private bool isJumping;
+    private bool isVerticalDecay;
 
-    private float velY;
+    [SerializeField]
+    private float moveSpeed = 0.1f;
 
-    private float velX;
-
-    private float jumpBurst;
-
-    private bool resting;
-    private int counter = 10;
-    private Vector2 temPos;
     #endregion Fields
+
+    #region Properties
+
+    /// <summary>
+    /// Gets or sets the jumping state of this object.
+    /// </summary>
+    public bool IsJumping
+    {
+        get
+        {
+            return isJumping;
+        }
+        set
+        {
+            isJumping = value;
+        }
+    }
+
+    /// <summary>
+    /// Gets or sets the state of the vertical velocity's decay.
+    /// </summary>
+    public bool IsVerticalDecay
+    {
+        get
+        {
+            return isVerticalDecay;
+        }
+        set
+        {
+            isVerticalDecay = value;
+        }
+    }
+
+    #endregion Properties
+
     // Start is called before the first frame update
     void Start()
     {
-        grav = 0.0001f;
-        velX = 1f;
-        jumpBurst = 1f;
-        //temporary
-        resting = true;
-        pos = this.gameObject.transform.position;
+        position = this.gameObject.transform.position;
+        velocity = Vector3.zero;
+        isJumping = false;
+        isVerticalDecay = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        position = this.gameObject.transform.position;
 
-
-        Movin();
-
-        this.gameObject.transform.position = pos;
-    }
-
-    void Movin()
-    {
-        if(Input.GetKey(KeyCode.LeftArrow))
+        // Listen out for left or right inputs
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
-            temPos.x -= velX;
+            velocity.x = -1 * moveSpeed;
             Debug.Log("Left");
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+
+        if (Input.GetKey(KeyCode.RightArrow))
         {
-            temPos.x += velX;
+            velocity.x = moveSpeed;
             Debug.Log("Right");
         }
-        else
+
+        // If neither inputs are pressed, decay horizontal movement
+        if (Input.GetKey(KeyCode.LeftArrow) == false && Input.GetKey(KeyCode.RightArrow) == false)
         {
-            velX = 0;
+            // Decay the speed based on which direction the player is moving in.
+            velocity.x -= velocity.x / 4;
+
+            if (Mathf.Abs(velocity.x) <= 0.001f)
+            {
+                velocity.x = 0;
+            }
         }
-        if((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && resting )
+
+        // Listen for jump input from up arrow or space bar.
+        if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.UpArrow))
         {
-            velY = jumpBurst;
-            resting = false;
             Debug.Log("Jump");
+            if (isJumping == false)
+            {
+                isJumping = true;
+                velocity.y += 1;
+            }
         }
-        else if(!resting && counter > 0)
+
+        // Let the jump velocity decay
+        if (isVerticalDecay)
         {
-            velY = jumpBurst;//- (float)(counter/10f);
-            counter--;
+            velocity.y -= velocity.y / 4;
+            if (velocity.y <= 0.001f)
+            {
+                velocity.y = 0;
+            }
         }
         else
         {
-            velY = 0f;
+            velocity.y -= velocity.y / 4;
+            if (velocity.y <= 0.001f)
+            {
+                isVerticalDecay = true;
+            }
         }
-        //if(!resting)
-        //Gravity();
-        pos.y += velY;
-        pos += temPos;
-        transform.position = pos;
-        //Debug.Log(velY);
-        temPos = new Vector2(0f, 0f);
+
+        // Update this script's position, then update the GameObject's position.
+        position += velocity;
+        this.gameObject.transform.position = position;
     }
-
-
-
-    void Gravity()
-    {
-        velY -= (grav + Time.deltaTime)/5f;
-
-    }
-
-    public void Landed()
-    {
-        velY = 0;
-        resting = true;
-        Debug.Log("Landed");
-    }
-
 }
