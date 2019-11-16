@@ -7,6 +7,8 @@ public class LevelGoalMenu : MonoBehaviour
 
     #region Fields
 
+    //[SerializeField]
+    //private GameObject canvas;
     //private bool activated;
 
     #endregion Fields
@@ -26,10 +28,10 @@ public class LevelGoalMenu : MonoBehaviour
         //if (Player.bounds.Intersects(bounds)){
             //activated = true;
             //OR
-            //Canvas stuff is enabled
+            //canvas.SetActive(true);
         //}
         //if(activated){
-            //gameObject.SetActive(true);
+            //canvas.SetActive(true);
         //}
     }
 }
