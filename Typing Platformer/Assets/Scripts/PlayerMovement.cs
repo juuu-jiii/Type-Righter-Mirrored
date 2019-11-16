@@ -19,17 +19,19 @@ public class PlayerMovement : MonoBehaviour
     private float jumpBurst;
 
     private bool resting;
-    private int counter = 15;
+    private int counter = 10;
+    private Vector2 temPos;
     #endregion Fields
     // Start is called before the first frame update
     void Start()
     {
         grav = 0.0001f;
         velX = 1f;
-        jumpBurst = 10f;
+        jumpBurst = 1f;
         //temporary
         resting = true;
         pos = new Vector2(-15.23f, -10.24f);
+        temPos = new Vector2(0f, 0f);
     }
 
     // Update is called once per frame
@@ -43,12 +45,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.LeftArrow))
         {
-            pos.x -= velX;
+            temPos.x -= velX;
             Debug.Log("Left");
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            pos.x += velX;
+            temPos.x += velX;
             Debug.Log("Right");
         }
         else
@@ -61,6 +63,11 @@ public class PlayerMovement : MonoBehaviour
             resting = false;
             Debug.Log("Jump");
         }
+        else if(!resting && counter > 0)
+        {
+            velY = jumpBurst;//- (float)(counter/10f);
+            counter--;
+        }
         else
         {
             velY = 0f;
@@ -68,8 +75,10 @@ public class PlayerMovement : MonoBehaviour
         //if(!resting)
         //Gravity();
         pos.y += velY;
+        pos += temPos;
         transform.position = pos;
         //Debug.Log(velY);
+        temPos = new Vector2(0f, 0f);
     }
 
 
