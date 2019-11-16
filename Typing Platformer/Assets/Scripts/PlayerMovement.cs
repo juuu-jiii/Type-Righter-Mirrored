@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
         jumpBurst = 1f;
         //temporary
         resting = true;
-        pos = new Vector2(-15.23f, -10.24f);
+        pos = new Vector2(-22.64f, -8.48f);
         temPos = new Vector2(0f, 0f);
     }
 
@@ -70,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            velY = 0f;
+            //velY = 0f;
         }
         //if(!resting)
         //Gravity();
@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    public void Landed()
+    public void Landed(GameObject col)
     {
         velY = 0;
         resting = true;

@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4924470033912121589}
   - component: {fileID: 7429751383359328544}
+  - component: {fileID: 4630465206821483099}
+  - component: {fileID: 5855798930529393151}
   m_Layer: 0
   m_Name: Player Sprite
   m_TagString: Untagged
@@ -79,6 +81,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4630465206821483099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3417628072796129598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d65af1717a1442c4aa7ad08e7a5a690f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blocks: []
+  levelCompleteCanvas: {fileID: 0}
+--- !u!114 &5855798930529393151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3417628072796129598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37bcc81f6ec17d74f84b38ce1a071160, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8336513037643080200
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,8 +116,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8336513037643080197}
-  - component: {fileID: 8336513037643080198}
-  - component: {fileID: 8336513037643080199}
   m_Layer: 0
   m_Name: The Player
   m_TagString: Untagged
@@ -112,30 +138,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8336513037643080198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8336513037643080200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37bcc81f6ec17d74f84b38ce1a071160, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8336513037643080199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8336513037643080200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d65af1717a1442c4aa7ad08e7a5a690f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blocks: []
-  player: {fileID: 8336513037643080200}
-  levelCompleteCanvas: {fileID: 0}
