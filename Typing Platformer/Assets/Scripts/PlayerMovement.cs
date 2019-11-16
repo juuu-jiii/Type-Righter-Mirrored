@@ -73,6 +73,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Update speed variable to switch between run and idle
+        anim.SetFloat("Speed", Mathf.Abs(velocity.x));
+
         position = this.gameObject.transform.position;
 
         // Listen out for left or right inputs
@@ -147,9 +150,6 @@ public class PlayerMovement : MonoBehaviour
             ReverseImage();
         }
         Debug.Log(h);
-
-        // Update speed variable to switch between run and idle
-        anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
     }
 
     void ReverseImage()
