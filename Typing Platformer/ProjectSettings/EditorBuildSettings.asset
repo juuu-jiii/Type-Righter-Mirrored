@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/WinScene.unity
     guid: a9a827d653451dc478192d701f9c26f6
   - enabled: 1
-    path: Assets/Scenes/TestLEvel.unity
+    path: Assets/Scenes/Levels/TestLEvel.unity
     guid: 41cfb93acef1a4649920f5bc6f22a68d
   - enabled: 1
     path: Assets/Scenes/DinoLevel.unity
