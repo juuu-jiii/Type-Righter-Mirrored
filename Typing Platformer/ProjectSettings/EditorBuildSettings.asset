@@ -27,6 +27,30 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/TestLEvel.unity
     guid: 41cfb93acef1a4649920f5bc6f22a68d
   - enabled: 1
-    path: Assets/Scenes/DinoLevel.unity
+    path: Assets/Scenes/Levels/DinoLevel.unity
     guid: e20359e9fbd2742e4b87e53691f2a608
+  - enabled: 1
+    path: Assets/Scenes/Levels/Alex's Level.unity
+    guid: 96e048aa599a2c44d94f46ceb82ca16f
+  - enabled: 1
+    path: Assets/Scenes/Levels/DoItAgain.unity
+    guid: 88d50304fd0b9af4d9f8d4ec5d9740ac
+  - enabled: 1
+    path: Assets/Scenes/Levels/Final Level.unity
+    guid: c08c05f4cc57c49488de43e7d6eb08cc
+  - enabled: 1
+    path: Assets/Scenes/Levels/FullPlateLevel.unity
+    guid: f5bef2b895057407fa254319fca0acc2
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 1.unity
+    guid: a5f42ad0f29a6244a80c41b40e765b18
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 2.unity
+    guid: 7ad4f7045f3e67345a76e8b71c126aa9
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 5.unity
+    guid: dabc27318f11be9498474370b25749e0
+  - enabled: 1
+    path: Assets/Scenes/Levels/PeanutButter.unity
+    guid: f87e88ef787404c608e369c0f7f329fa
   m_configObjects: {}
