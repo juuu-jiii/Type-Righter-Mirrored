@@ -42,33 +42,29 @@ public class Collisions : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject collided = collision.gameObject;
-        Debug.Log(collided);
-        PrefabInfo pre = collided.GetComponent<PrefabInfo>();
+        Debug.Log("I collided!");
+        PrefabType collidedType = collided.GetComponent<PrefabInfo>().Type;
+        PlayerMovement movement = this.gameObject.GetComponent<PlayerMovement>();
 
-        switch (pre.Type)
+        if(collidedType == PrefabType.Solid)
+            Debug.Log("landed");
+        switch (collidedType)
         {
             case PrefabType.Block:
                 {
-                    Player.gameObject.GetComponent<PlayerMovement>().Landed(collided);
+                    movement.IsJumping = false;
+                    Debug.Log("Block!");
                 }
                 break;
             case PrefabType.Spike:
                 {
-                    Player.gameObject.GetComponent<PlayerMovement>().Landed(collided);
+                    PlayerPrefs.SetString("previousScene", SceneManager.GetActiveScene().name);
                     SceneManager.LoadScene("GameOver");
-
                 }
                 break;
             case PrefabType.Goal:
                 {
-                    Player.gameObject.GetComponent<PlayerMovement>().Landed(collided);
                     levelCompleteCanvas.SetActive(true);
-                }
-                break;
-            case PrefabType.Solid:
-                {
-                    Player.gameObject.GetComponent<PlayerMovement>().Landed(collided);
-                    Debug.Log("landed");
                 }
                 break;
         }
