@@ -15,7 +15,7 @@ public class Collisions : MonoBehaviour
     [SerializeField]
     private GameObject Player;
     #endregion Fields
-
+    //
     #region Properties
     public GameObject[] Blocks
     {
