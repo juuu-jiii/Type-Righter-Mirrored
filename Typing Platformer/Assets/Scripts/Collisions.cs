@@ -38,8 +38,11 @@ public class Collisions : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject collided = collision.gameObject;
-        PrefabType pre = collided.GetComponent<PrefabInfo>().Type;
-        switch(pre)
+        Debug.Log("I collided!");
+        PrefabType pre = collided.GetComponent<BasicPlatform>().GetComponent<PrefabInfo>().Type;
+        if(pre == PrefabType.Solid)
+            Debug.Log("landed");
+        switch (pre)
         {
             case PrefabType.Block:
                 {
