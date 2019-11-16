@@ -47,7 +47,7 @@ public class MakeBlock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        tm = this.gameObject.GetComponent<TextMesh>();
+        tm = this.gameObject.GetComponentInChildren<TextMesh>();
         tm.text = letter.ToString().ToUpper();
 
         isListening = true;
@@ -61,6 +61,9 @@ public class MakeBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        tm.text = letter.ToString().ToUpper();
+
         // If there is no block yet, and the proper character is selected, then make the block.
         if (Input.GetKey(letter) && isListening)
         {
