@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Collisions : MonoBehaviour
 {
@@ -44,6 +45,8 @@ public class Collisions : MonoBehaviour
             case PrefabType.Spike:
                 {
                     player.GetComponent<PlayerMovement>().Landed();
+                    SceneManager.LoadScene("GameOver");
+
                 }
                 break;
             case PrefabType.Goal:
