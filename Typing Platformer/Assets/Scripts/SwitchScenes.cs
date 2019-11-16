@@ -26,11 +26,15 @@ public class SwitchScenes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if(SceneManager.GetActiveScene().name == "GameOver")
         {
-            string previousScene = PlayerPrefs.GetString("previousScene");
-            SceneManager.LoadScene(previousScene);
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                string previousScene = PlayerPrefs.GetString("previousScene");
+                SceneManager.LoadScene(previousScene);
+            }
         }
+
     }
 
     public void NextScene(){
