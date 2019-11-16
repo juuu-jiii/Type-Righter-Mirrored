@@ -34,7 +34,7 @@ public class LevelGoalMenu : MonoBehaviour
         if (playerSpriteRenderer.bounds.Intersects(levelGoalSpriteRenderer.bounds)){
             //activated = true;
             //OR
-            canvas.SetActive(true);
+           // canvas.SetActive(true);
         }
         //if(activated){
             //canvas.SetActive(true);
