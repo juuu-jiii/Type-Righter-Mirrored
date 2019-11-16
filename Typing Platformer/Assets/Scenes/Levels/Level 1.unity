@@ -1009,7 +1009,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.680521
+  orthographic size: 14.328503
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1054,12 +1054,12 @@ PrefabInstance:
     - target: {fileID: 6155780583393307363, guid: d57121a4766e91842a1dcd746b9b62b1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.48
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 6155780583393307363, guid: d57121a4766e91842a1dcd746b9b62b1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.52
+      value: -6.1
       objectReference: {fileID: 0}
     - target: {fileID: 6155780583393307363, guid: d57121a4766e91842a1dcd746b9b62b1,
         type: 3}
@@ -1109,38 +1109,38 @@ PrefabInstance:
     - target: {fileID: 6155780583393307363, guid: d57121a4766e91842a1dcd746b9b62b1,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 35.47477
+      value: 73.610146
       objectReference: {fileID: 0}
     - target: {fileID: 6155780583393307363, guid: d57121a4766e91842a1dcd746b9b62b1,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 7.123716
+      value: 1.6044744
       objectReference: {fileID: 0}
     - target: {fileID: 1630973144572793933, guid: d57121a4766e91842a1dcd746b9b62b1,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0.0019493103
+      value: -0.0000022053719
       objectReference: {fileID: 0}
     - target: {fileID: 1630973144572793933, guid: d57121a4766e91842a1dcd746b9b62b1,
         type: 3}
       propertyPath: m_Size.x
-      value: 1.1343613
+      value: 0.574286
       objectReference: {fileID: 0}
     - target: {fileID: 1630973144572793933, guid: d57121a4766e91842a1dcd746b9b62b1,
         type: 3}
       propertyPath: m_Offset.y
-      value: -0.06570744
+      value: 0.0022985786
       objectReference: {fileID: 0}
     - target: {fileID: 1630973144572793933, guid: d57121a4766e91842a1dcd746b9b62b1,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.43966007
+      value: 0.57567215
       objectReference: {fileID: 0}
     - target: {fileID: 18119575914063782, guid: d57121a4766e91842a1dcd746b9b62b1,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ffd6fe9858a50ab4683ac1f845d7e5db,
+      objectReference: {fileID: 21300000, guid: dd2f2b5e484cc144e817db5bff054d9a,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d57121a4766e91842a1dcd746b9b62b1, type: 3}
