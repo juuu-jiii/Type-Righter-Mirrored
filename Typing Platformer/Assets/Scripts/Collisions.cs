@@ -7,6 +7,8 @@ public class Collisions : MonoBehaviour
     #region Fields
     [SerializeField]
     private GameObject[] blocks;
+    [SerializeField]
+    private GameObject player;
     #endregion Fields
 
     #region Properties
@@ -31,6 +33,24 @@ public class Collisions : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject collided = collision.gameObject;
-        collided.GetComponent<>
+        PrefabType pre = collided.GetComponent<PrefabInfo>().Type;
+        switch(pre)
+        {
+            case PrefabType.Block:
+                {
+                    player.GetComponent<PlayerMovement>().Landed();
+                }
+                break;
+            case PrefabType.Spike:
+                {
+                    player.GetComponent<PlayerMovement>().Landed();
+                }
+                break;
+            case PrefabType.Goal:
+                {
+                    player.GetComponent<PlayerMovement>().Landed();
+                }
+                break;
+        }
     }
 }

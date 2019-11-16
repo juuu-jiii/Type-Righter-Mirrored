@@ -43,9 +43,13 @@ public class PlayerMovement : MonoBehaviour
         {
             pos.x -= velX * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.RightArrow))
         {
             pos.x += velX * Time.deltaTime;
+        }
+        else
+        {
+            velX = 0;
         }
         if((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && resting )
         {
@@ -64,6 +68,12 @@ public class PlayerMovement : MonoBehaviour
         velY -= grav * Time.deltaTime;
 
 
+    }
+
+    public void Landed()
+    {
+        velY = 0;
+        resting = true;
     }
 
 }
