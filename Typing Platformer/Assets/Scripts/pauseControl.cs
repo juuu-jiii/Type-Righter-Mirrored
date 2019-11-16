@@ -10,6 +10,8 @@ public class pauseControl : MonoBehaviour
     [SerializeField]
     private GameObject canvas;
     private bool active;
+    [SerializeField]
+    private GameObject player;
     #endregion fields
 
     #region properties
@@ -40,16 +42,22 @@ public class pauseControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             canvas.SetActive(active);
+
             active = !active;
         }
 
         if(canvas.activeSelf == true)
         {
             active = false;
+            player.SetActive(false);
         }
         else
         {
             active = true;
+            player.SetActive(true);
         }
+        
+            
+
     }
 }
