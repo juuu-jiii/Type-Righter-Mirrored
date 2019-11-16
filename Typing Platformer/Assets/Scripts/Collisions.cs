@@ -40,14 +40,15 @@ public class Collisions : MonoBehaviour
     {
         GameObject collided = collision.gameObject;
         Debug.Log("I collided!");
-        PrefabType pre = collided.GetComponent<BasicPlatform>().GetComponent<PrefabInfo>().Type;
-        if(pre == PrefabType.Solid)
+        PrefabType collidedType = collided.GetComponent<PrefabInfo>().Type;
+        
+        if(collidedType == PrefabType.Solid)
             Debug.Log("landed");
-        switch (pre)
+        switch (collidedType)
         {
             case PrefabType.Block:
                 {
-                    this.gameObject.GetComponent<PlayerMovement>().Landed();
+                    this.gameObject.GetComponent<Rigidbody>().useGravity = false;
                 }
                 break;
             case PrefabType.Spike:

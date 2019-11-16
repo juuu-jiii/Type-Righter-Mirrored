@@ -30,15 +30,17 @@ public class PlayerMovement : MonoBehaviour
         jumpBurst = 1f;
         //temporary
         resting = true;
-        pos = new Vector2(-15.23f, -10.24f);
-        temPos = new Vector2(0f, 0f);
+        pos = this.gameObject.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+
         Movin();
-        
+
+        this.gameObject.transform.position = pos;
     }
 
     void Movin()
