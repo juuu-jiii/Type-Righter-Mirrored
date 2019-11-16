@@ -1757,7 +1757,6 @@ RectTransform:
   - {fileID: 1402904301}
   - {fileID: 336208780}
   - {fileID: 303387677}
-  - {fileID: 1229392246}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3573,13 +3572,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1229392245}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 208374272}
-  m_Father: {fileID: 415657457}
-  m_RootOrder: 4
+  m_Father: {fileID: 1545155602}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4194,7 +4193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810c94605424be24fbe39e9b98667b21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: UITestScene
+  target: Alex's Level
 --- !u!114 &1402904303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4465,6 +4464,7 @@ RectTransform:
   - {fileID: 77819281}
   - {fileID: 1236992751}
   - {fileID: 1291702343}
+  - {fileID: 1229392246}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
