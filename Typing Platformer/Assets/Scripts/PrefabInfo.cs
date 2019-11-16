@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum PrefabType { Block, Goal, Spike, Letter}
+public enum PrefabType { Block, Goal, Spike, Letter, Solid}
 
 public class PrefabInfo : MonoBehaviour
 {

@@ -30,6 +30,10 @@ public class Collisions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        for (int i = 0; i > blocks.Length; i++)
+        {
+
+        }
 
     }
 
@@ -55,6 +59,12 @@ public class Collisions : MonoBehaviour
                 {
                     player.GetComponent<PlayerMovement>().Landed();
                     levelCompleteCanvas.SetActive(true);
+                }
+                break;
+            case PrefabType.Solid:
+                {
+                    player.GetComponent<PlayerMovement>().Landed();
+                    Debug.Log("landed");
                 }
                 break;
         }
