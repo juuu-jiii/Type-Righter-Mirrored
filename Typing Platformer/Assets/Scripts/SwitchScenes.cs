@@ -11,6 +11,7 @@ public class SwitchScenes : MonoBehaviour
 
     [SerializeField]
     private string target;
+    //private bool activated;
 
     #endregion Fields
 
@@ -20,13 +21,20 @@ public class SwitchScenes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        //activated = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        //if (Player.bounds.Intersects(bounds)){
+            //activated = true;
+            //OR
+            //Canvas stuff is enabled
+        //}
+        //if(activated){
+            //Canvas.SetActive(true);
+        //}
     }
 
     public void NextScene(){
