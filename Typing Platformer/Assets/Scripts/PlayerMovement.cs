@@ -15,6 +15,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 0.1f;
 
+    // Animation fields
+    private Animator anim;
+    private Rigidbody2D rb;
+    private bool facingLeft = false;
+    private float h;
+
     #endregion Fields
 
     #region Properties
@@ -58,6 +64,10 @@ public class PlayerMovement : MonoBehaviour
         velocity = Vector3.zero;
         isJumping = false;
         isVerticalDecay = false;
+
+        // Get animation variables
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -122,5 +132,34 @@ public class PlayerMovement : MonoBehaviour
         // Update this script's position, then update the GameObject's position.
         position += velocity;
         this.gameObject.transform.position = position;
+
+
+        // Animate
+
+        // Determine orientation
+        h = Input.GetAxis("Horizontal");
+        if (h < 0 && !facingLeft)
+        {
+            ReverseImage();
+        }
+        else if (h > 0 && facingLeft)
+        {
+            ReverseImage();
+        }
+        Debug.Log(h);
+
+        // Update speed variable to switch between run and idle
+        anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+    }
+
+    void ReverseImage()
+    {
+        facingLeft = !facingLeft;
+        // Get and store the local scale of the RigidBody2D
+        Vector2 theScale = rb.transform.localScale;
+
+        // Flip it around the other way
+        theScale.x *= -1;
+        rb.transform.localScale = theScale;
     }
 }
