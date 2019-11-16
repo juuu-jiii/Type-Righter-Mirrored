@@ -41,4 +41,9 @@ public class SwitchScenes : MonoBehaviour
         Application.Quit();
     }
 
+    public void RetryLevel(){
+        string previousScene = PlayerPrefs.GetString("previousScene");
+        SceneManager.LoadScene(previousScene);
+    }
+
 }

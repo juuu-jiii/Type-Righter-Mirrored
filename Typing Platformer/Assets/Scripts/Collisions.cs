@@ -11,8 +11,11 @@ public class Collisions : MonoBehaviour
 
     [SerializeField]
     private GameObject levelCompleteCanvas;
-    #endregion Fields
 
+    [SerializeField]
+    private GameObject Player;
+    #endregion Fields
+    //
     #region Properties
     public GameObject[] Blocks
     {
@@ -42,7 +45,7 @@ public class Collisions : MonoBehaviour
         Debug.Log("I collided!");
         PrefabType collidedType = collided.GetComponent<PrefabInfo>().Type;
         PlayerMovement movement = this.gameObject.GetComponent<PlayerMovement>();
-        
+
         if(collidedType == PrefabType.Solid)
             Debug.Log("landed");
         switch (collidedType)
@@ -54,12 +57,13 @@ public class Collisions : MonoBehaviour
                 }
                 break;
             case PrefabType.Spike:
-                {                    
+                {
+                    PlayerPrefs.SetString("previousScene", SceneManager.GetActiveScene().name);
                     SceneManager.LoadScene("GameOver");
                 }
                 break;
             case PrefabType.Goal:
-                {                   
+                {
                     levelCompleteCanvas.SetActive(true);
                 }
                 break;
