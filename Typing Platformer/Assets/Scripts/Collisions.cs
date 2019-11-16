@@ -31,6 +31,6 @@ public class Collisions : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject collided = collision.gameObject;
-        collided.GetComponent<>
+        //collided.GetComponent<>
     }
 }
