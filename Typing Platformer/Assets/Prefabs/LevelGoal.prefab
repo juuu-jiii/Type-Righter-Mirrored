@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2856036007991917511}
   - component: {fileID: 2515009284944611655}
+  - component: {fileID: -4806102515655661458}
   m_Layer: 0
   m_Name: LevelGoal
   m_TagString: Untagged
@@ -58,6 +59,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-4806102515655661458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2856036007991917509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a94a9d7a982ff74582a5ec7183a6456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
 --- !u!1 &2856036008877270676
 GameObject:
   m_ObjectHideFlags: 0
