@@ -51,6 +51,11 @@ public class Collisions : MonoBehaviour
                     player.GetComponent<PlayerMovement>().Landed();
                 }
                 break;
+            case PrefabType.Solid:
+                {
+                    player.GetComponent<PlayerMovement>().Landed();
+                }
+                break;
         }
     }
 }
