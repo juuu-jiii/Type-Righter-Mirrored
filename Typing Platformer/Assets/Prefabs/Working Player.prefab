@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 7443869612037201370}
   - component: {fileID: 3538833899207890537}
   m_Layer: 0
-  m_Name: The Player 2
+  m_Name: Working Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169,8 +169,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7443869612037201367}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.04, y: -8.65, z: -1.2480469}
-  m_LocalScale: {x: 0.35493, y: 0.35493, z: 0.35493}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5812998055457126186}
   m_Father: {fileID: 0}
