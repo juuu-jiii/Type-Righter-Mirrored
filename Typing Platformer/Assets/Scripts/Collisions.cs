@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Collisions : MonoBehaviour
 {
@@ -27,7 +28,11 @@ public class Collisions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        for (int i = 0; i > blocks.Length; i++)
+        {
+           
+        }
+
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -44,11 +49,19 @@ public class Collisions : MonoBehaviour
             case PrefabType.Spike:
                 {
                     player.GetComponent<PlayerMovement>().Landed();
+                    SceneManager.LoadScene("GameOver");
+
                 }
                 break;
             case PrefabType.Goal:
                 {
                     player.GetComponent<PlayerMovement>().Landed();
+                }
+                break;
+            case PrefabType.Solid:
+                {
+                    player.GetComponent<PlayerMovement>().Landed();
+                    Debug.Log("landed");
                 }
                 break;
         }
