@@ -15,6 +15,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 0.1f;
 
+    [SerializeField]
+    private float jumpHeight = 1.5f;
+
     // Animation fields
     private Animator anim;
     private Rigidbody2D rb;
@@ -66,8 +69,8 @@ public class PlayerMovement : MonoBehaviour
         isVerticalDecay = false;
 
         // Get animation variables
-        rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        rb = this.gameObject.GetComponent<Rigidbody2D>();
+        anim = this.gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -110,7 +113,7 @@ public class PlayerMovement : MonoBehaviour
             if (isJumping == false)
             {
                 isJumping = true;
-                velocity.y += 2;
+                velocity.y += jumpHeight;
             }
         }
 

@@ -6,23 +6,16 @@ using UnityEngine.SceneManagement;
 public class Collisions : MonoBehaviour
 {
     #region Fields
-    [SerializeField]
-    private GameObject[] blocks;
 
     [SerializeField]
     private GameObject levelCompleteCanvas;
 
-    [SerializeField]
-    private GameObject Player;
     #endregion Fields
-    //
+
     #region Properties
-    public GameObject[] Blocks
-    {
-        get { return blocks; }
-        set { blocks = value; }
-    }
+
     #endregion Properties
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,10 +25,6 @@ public class Collisions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i > blocks.Length; i++)
-        {
-
-        }
 
     }
 
@@ -44,7 +33,7 @@ public class Collisions : MonoBehaviour
         GameObject collided = collision.gameObject;
         //Debug.Log("I collided!");
         PrefabInfo collidedType = collided.GetComponent<PrefabInfo>();
-        PlayerMovement movement = Player.gameObject.GetComponent<PlayerMovement>();
+        PlayerMovement movement = this.gameObject.GetComponent<PlayerMovement>();
 
         switch (collidedType.Type)
         {
