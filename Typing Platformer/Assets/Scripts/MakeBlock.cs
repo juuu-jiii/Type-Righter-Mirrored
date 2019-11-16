@@ -19,12 +19,17 @@ public class MakeBlock : MonoBehaviour
     private float timeActive = 5f;
 
     [SerializeField]
-    private GameObject block;
+    private GameObject blockPrefab;
+
+    private GameObject thisBlock;
 
     #endregion Fields
 
     #region Properties
 
+    /// <summary>
+    /// Gets or sets what letter this letter object should be.
+    /// </summary>
     public KeyCode Letter
     {
         get
@@ -47,6 +52,10 @@ public class MakeBlock : MonoBehaviour
 
         isListening = true;
         count = 0;
+
+        thisBlock = Instantiate(blockPrefab, this.gameObject.transform.position, Quaternion.identity);
+        thisBlock.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -56,7 +65,8 @@ public class MakeBlock : MonoBehaviour
         if (Input.GetKey(letter) && isListening)
         {
             isListening = false;
-            // TODO: ENABLE BLOCK
+            thisBlock.SetActive(true);
+            
         }
 
         // Up the count variable if the block is active.
@@ -68,7 +78,7 @@ public class MakeBlock : MonoBehaviour
         // Check if the block should be destroyed or not.
         if (count >= timeActive)
         {
-            // TODO: DISABLE BLOCK
+            thisBlock.SetActive(false);
             count = 0;
             isListening = true;
         }
