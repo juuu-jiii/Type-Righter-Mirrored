@@ -8,7 +8,7 @@ public class LevelGoalMenu : MonoBehaviour
     #region Fields
 
     [SerializeField]
-    private GameObject canvas;
+    private GameObject levelCompleteCanvas;
     [SerializeField]
     private GameObject player;
     private Renderer playerSpriteRenderer;

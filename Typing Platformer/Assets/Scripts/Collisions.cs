@@ -10,6 +10,8 @@ public class Collisions : MonoBehaviour
     private GameObject[] blocks;
     [SerializeField]
     private GameObject player;
+    [SerializeField]
+    private GameObject levelCompleteCanvas;
     #endregion Fields
 
     #region Properties
@@ -22,7 +24,7 @@ public class Collisions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -30,7 +32,7 @@ public class Collisions : MonoBehaviour
     {
         for (int i = 0; i > blocks.Length; i++)
         {
-           
+
         }
 
     }
@@ -56,6 +58,7 @@ public class Collisions : MonoBehaviour
             case PrefabType.Goal:
                 {
                     player.GetComponent<PlayerMovement>().Landed();
+                    levelCompleteCanvas.SetActive(true);
                 }
                 break;
             case PrefabType.Solid:
