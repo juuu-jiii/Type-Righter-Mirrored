@@ -9,8 +9,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 pos;
     [SerializeField]
     private float grav;
-    [SerializeField]
-    private float accY;
+    //[SerializeField]
+    //private float accY;
     [SerializeField]
     private float velY;
     [SerializeField]
@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        grav = -1f;
+        grav = -6f;
         velX = 1f;
         jumpBurst = 7f;
         //temporary
@@ -54,13 +54,16 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Gravity();
+        pos += new Vector2(velX, velY);
     }
 
 
 
     void Gravity()
     {
-        
+        velY -= grav * Time.deltaTime;
+
+
     }
 
 }
