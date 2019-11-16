@@ -42,18 +42,22 @@ public class Collisions : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject collided = collision.gameObject;
-        Debug.Log("I collided!");
-        PrefabType collidedType = collided.GetComponent<PrefabInfo>().Type;
-        PlayerMovement movement = this.gameObject.GetComponent<PlayerMovement>();
+        //Debug.Log("I collided!");
+        PrefabInfo collidedType = collided.GetComponent<PrefabInfo>();
+        PlayerMovement movement = Player.gameObject.GetComponent<PlayerMovement>();
 
-        if(collidedType == PrefabType.Solid)
-            Debug.Log("landed");
-        switch (collidedType)
+        switch (collidedType.Type)
         {
             case PrefabType.Block:
                 {
                     movement.IsJumping = false;
-                    Debug.Log("Block!");
+                    //Debug.Log("Block!");
+                }
+                break;
+            case PrefabType.Solid:
+                {
+                    movement.IsJumping = false;
+                    //Debug.Log("solid");
                 }
                 break;
             case PrefabType.Spike:
