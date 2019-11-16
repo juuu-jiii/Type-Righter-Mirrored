@@ -33,4 +33,12 @@ public class SwitchScenes : MonoBehaviour
         SceneManager.LoadScene(target);
     }
 
+    public void SwitchToMainMenu(){
+        SceneManager.LoadScene("TitleScene");
+    }
+
+    public void QuitGame(){
+        Application.Quit();
+    }
+
 }
