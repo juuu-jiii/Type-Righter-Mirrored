@@ -10,7 +10,7 @@ public class SwitchScenes : MonoBehaviour
     #region Fields
 
     [SerializeField]
-    private Scene scene;
+    private string target;
 
     #endregion Fields
 
@@ -30,7 +30,7 @@ public class SwitchScenes : MonoBehaviour
     }
 
     public void NextScene(){
-        SceneManager.LoadScene("UITestScene");
+        SceneManager.LoadScene(target);
     }
 
 }
