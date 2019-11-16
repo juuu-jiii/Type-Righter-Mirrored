@@ -40,33 +40,27 @@ public class Collisions : MonoBehaviour
     {
         GameObject collided = collision.gameObject;
         Debug.Log("I collided!");
-        PrefabType pre = collided.GetComponent<BasicPlatform>().GetComponent<PrefabInfo>().Type;
-        if(pre == PrefabType.Solid)
+        PrefabType collidedType = collided.GetComponent<PrefabInfo>().Type;
+        PlayerMovement movement = this.gameObject.GetComponent<PlayerMovement>();
+        
+        if(collidedType == PrefabType.Solid)
             Debug.Log("landed");
-        switch (pre)
+        switch (collidedType)
         {
             case PrefabType.Block:
                 {
-                    this.gameObject.GetComponent<PlayerMovement>().Landed();
+                    movement.IsJumping = false;
+                    Debug.Log("Block!");
                 }
                 break;
             case PrefabType.Spike:
-                {
-                    this.gameObject.GetComponent<PlayerMovement>().Landed();
+                {                    
                     SceneManager.LoadScene("GameOver");
-
                 }
                 break;
             case PrefabType.Goal:
-                {
-                    this.gameObject.GetComponent<PlayerMovement>().Landed();
+                {                   
                     levelCompleteCanvas.SetActive(true);
-                }
-                break;
-            case PrefabType.Solid:
-                {
-                    this.gameObject.GetComponent<PlayerMovement>().Landed();
-                    Debug.Log("landed");
                 }
                 break;
         }
