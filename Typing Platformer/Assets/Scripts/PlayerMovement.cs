@@ -5,29 +5,31 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     #region Fields
-    [SerializeField]
+
     private Vector2 pos;
-    [SerializeField]
+
     private float grav;
     //[SerializeField]
     //private float accY;
-    [SerializeField]
+
     private float velY;
-    [SerializeField]
+
     private float velX;
-    [SerializeField]
+
     private float jumpBurst;
-    [SerializeField]
+
     private bool resting;
+    private int counter = 15;
     #endregion Fields
     // Start is called before the first frame update
     void Start()
     {
-        grav = -6f;
+        grav = 0.0001f;
         velX = 1f;
-        jumpBurst = 7f;
+        jumpBurst = 10f;
         //temporary
         resting = true;
+        pos = new Vector2(-15.23f, -10.24f);
     }
 
     // Update is called once per frame
@@ -41,11 +43,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.LeftArrow))
         {
-            pos.x -= velX * Time.deltaTime;
+            pos.x -= velX;
+            Debug.Log("Left");
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            pos.x += velX * Time.deltaTime;
+            pos.x += velX;
+            Debug.Log("Right");
         }
         else
         {
@@ -55,18 +59,24 @@ public class PlayerMovement : MonoBehaviour
         {
             velY = jumpBurst;
             resting = false;
+            Debug.Log("Jump");
         }
-
-        Gravity();
-        pos += new Vector2(velX, velY);
+        else
+        {
+            velY = 0f;
+        }
+        //if(!resting)
+        //Gravity();
+        pos.y += velY;
+        transform.position = pos;
+        //Debug.Log(velY);
     }
 
 
 
     void Gravity()
     {
-        velY -= grav * Time.deltaTime;
-
+        velY -= (grav + Time.deltaTime)/5f;
 
     }
 
@@ -74,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
     {
         velY = 0;
         resting = true;
+        Debug.Log("Landed");
     }
 
 }
