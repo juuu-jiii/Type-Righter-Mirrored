@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9124297679917215693}
   - component: {fileID: 9124297679917215283}
   - component: {fileID: 9124297679917215692}
+  - component: {fileID: 5281943384904360556}
   m_Layer: 0
   m_Name: Letter
   m_TagString: Untagged
@@ -47,7 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   letter: 97
   timeActive: 5
-  blockPrefab: {fileID: 0}
+  blockPrefab: {fileID: 8912678610731562331, guid: d57121a4766e91842a1dcd746b9b62b1,
+    type: 3}
 --- !u!23 &9124297679917215283
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -107,3 +109,16 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
+--- !u!114 &5281943384904360556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9124297679917215695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a94a9d7a982ff74582a5ec7183a6456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
